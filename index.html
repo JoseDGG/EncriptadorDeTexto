@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>Encriptador de texto de Oracle x Alura</h1>
+    <header class="header">
+        <img src="assets/Logo.png" alt="logo Alura">
+    </header>
+    <h1>Encriptador de texto</h1>
+    <main class="main">
+        <!-- Sección donde va el texto a encriptar -->
+        <section class="main__encriptador">
+            <input>
+            <div class="main__encriptador__advertencia">
+                <img src="" alt="logo advertencia">
+                <p class="encriptador__advertencia__texto">solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="main__encriptador__botones">
+                <button>Encriptar</button>
+                <button>Desencriptar</button>
+            </div>
+        </section>
+        <!-- Sección donde va el texto desencriptado -->
+        <section class="main__desencriptado">
+            <div class="main__desencriptado_container">
+                <p>texto</p>
+                <button>Copiar</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        Elaborado por Jose David Garcia para el challenge de Alura Latam 2024
+    </footer>
 </body>
 </html>

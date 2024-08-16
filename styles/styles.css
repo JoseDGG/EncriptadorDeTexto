@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-background: #f8fafa;
+
+    --font-inter:font-family: "Inter", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: var(--color-background);
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+.header{
+    padding:40px 0% 0% 40px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.main__encriptador{
+    display: flex;
+    flex-direction: column;
+}
+
+.main__encriptador__advertencia{
+    display: flex;
+    gap: 8px;
+}
+
+.encriptador__advertencia__texto{
+    font-family: var(--font-inter);
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+.main__encriptador__botones{
+    display: flex;
+    gap: 24px;
+}
+
+.main__desencriptado{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    margin-top: auto;
+}
+
+@media (max-width: 1023px){
+    .header{
+        padding: 6% 0% 0% 2%;
+    }
+}
