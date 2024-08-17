@@ -30,6 +30,8 @@ body{
     display: flex;
     min-height: 100%;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .header{
@@ -39,19 +41,22 @@ body{
 .main{
     display: flex;
     justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .main__encrypted{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 80px 0% 2% 10%; /*top, right, bottom, left*/
-    height: 80vh;
+    height: 100%;
 }
 
 .input{
     border: none;
     outline: none;
+    padding-top: 16%;
     background-color: var(--color-background);
     font-family: var(--font-inter);
     color: var(--color-text-1);
@@ -82,6 +87,7 @@ body{
 .main__encrypted__buttons{
     display: flex;
     gap: 24px;
+    padding-bottom: 7%;
 }
 
 .button__encrypt{
@@ -110,13 +116,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0% 10% 2% 0%; /*top, right, bottom, left*/
+    box-sizing: border-box;
     width: 30%;
-    height: 80vh;
+    height: 100%;
     border-radius: 32px;
     background-color: var(--color-box-background);
-    border-radius: 10px;
-    padding: 2%;
+    padding: 2% 2% 4% 2%; /*top, right, bottom, left*/
     box-shadow: 5px 5px 10px var(--color-box-shadow),
                 -5px -5px 10px var(--color-box-Light);
 }
@@ -148,23 +153,39 @@ body{
     width: 100%;
 }
 
-@media (max-width: 769px){
+@media (max-width: 1025px){
 
     .header{
         padding: 6% 0% 0% 2%; /*top, right, bottom, left*/
     }
+
+    .logo__alura{
+        width: 10%;
+    }
+
     .main{
         flex-direction: column;
         margin: 6% 6% 0% 6%; /*top, right, bottom, left*/
     }
 
     .main__encrypted{
-        margin: 0% 0% 0% 0%;
+        margin: 0% 0% 0% 0%; /*top, right, bottom, left*/
     }
+
+    .input{
+        padding-top: 1%;
+    }
+
+    .main__encrypted__buttons{
+        gap: auto;
+        justify-content: space-between;
+        padding-bottom: 0%;
+    }
+
     .main__decrypted{
-        margin: 6% 20% 0% 20%;
+        margin: 6% 20% 6% 20%; /*top, right, bottom, left*/
         align-self: center;
         height: auto;
-        width: auto;
+        width: 100%;
     }
 }
