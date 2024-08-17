@@ -10,30 +10,29 @@
     <header class="header">
         <img src="assets/Logo.png" alt="logo Alura">
     </header>
-    <h1>Encriptador de texto</h1>
     <main class="main">
         <!-- Sección donde va el texto a encriptar -->
-        <section class="main__encriptador">
-            <input>
-            <div class="main__encriptador__advertencia">
-                <img src="" alt="logo advertencia">
-                <p class="encriptador__advertencia__texto">solo letras minúsculas y sin acentos</p>
-            </div>
-            <div class="main__encriptador__botones">
-                <button>Encriptar</button>
-                <button>Desencriptar</button>
-            </div>
-        </section>
-        <!-- Sección donde va el texto desencriptado -->
-        <section class="main__desencriptado">
-            <div class="main__desencriptado_container">
-                <p>texto</p>
-                <button>Copiar</button>
+        <section class="main__encrypted">
+            <input class="input" type="text" placeholder="Ingrese el texto aquí">
+            <div class="main__encrypted__leftBottom">
+                <div class="main__encrypted__warning">
+                    <img class="exclamation__circle" src="assets/bi--exclamation-circle-fill.png" alt="logo__warning">
+                    <p class="warning__text">solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="main__encrypted__buttons">
+                    <button class="button__encrypt">Encriptar</button>
+                    <button class="button__decrypt">Desencriptar</button>
+                </div>
             </div>
         </section>
+        <!-- Sección donde va el texto decrypted -->
+            <div class="main__decrypted">
+                <p class="decrypted__text">El texto va aqui</p>
+                <button class="button__copy">Copiar</button>
+            </div>
     </main>
     <footer class="footer">
-        Elaborado por Jose David Garcia para el challenge de Alura Latam 2024
+        Elaborado por Jose David Garcia para el challenge de Alura Latam x Oracle 2024
     </footer>
 </body>
 </html>

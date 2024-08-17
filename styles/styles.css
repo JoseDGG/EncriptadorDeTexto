@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
-    --color-background: #f8fafa;
+    --color-background: #e6e6e6;
+    --color-background-button1: #0A3871;
+    --color-background-button2: #D8DFE8;
+
+    --color-box-background: #e6e6e6;
+    --color-box-Light: #ffffff;
+    --color-box-shadow:#9c9c9c;
+
+    --color-text-1: #0A3871;
+    --color-text-2: #FFFFFF;
+    --color-text-warning: #495057;
 
     --font-inter:font-family: "Inter", sans-serif;
 }
@@ -23,50 +33,138 @@ body{
 }
 
 .header{
-    padding:40px 0% 0% 40px;
+    padding:40px 0% 0% 40px; /*top, right, bottom, left*/
 }
-
+ 
 .main{
     display: flex;
-    justify-content: center;
-    gap: 80px;
+    justify-content: space-between;
 }
 
-.main__encriptador{
+.main__encrypted{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 80px 0% 2% 10%; /*top, right, bottom, left*/
+    height: 80vh;
 }
 
-.main__encriptador__advertencia{
+.input{
+    border: none;
+    outline: none;
+    background-color: var(--color-background);
+    font-family: var(--font-inter);
+    color: var(--color-text-1);
+    font-size: 32px;
+}
+
+.input::placeholder{
+    color: var(--color-text-1);
+}
+
+.main__encrypted__warning{
     display: flex;
     gap: 8px;
+    margin: 2% 0% 2% 0%; /*top, right, bottom, left*/
 }
 
-.encriptador__advertencia__texto{
+.warning__text{
     font-family: var(--font-inter);
     font-weight: 400;
     font-size: 0.75rem;
+    color: var(--color-text-warning);
 }
-.main__encriptador__botones{
+
+.exclamation__circle{
+    width: 16px;
+    height: 16px;
+}
+.main__encrypted__buttons{
     display: flex;
     gap: 24px;
 }
 
-.main__desencriptado{
-    display: flex;
-    flex-direction: column;
+.button__encrypt{
+    color: var(--color-text-2);
+    width: 267px;
+    height: 67px;
+    background-color: var(--color-background-button1);
+    border: 1px solid var(--color-background-button1) ;
+    border-radius: 24px;
+    box-shadow: 5px 5px 10px var(--color-box-shadow),
+                -5px -5px 10px var(--color-box-Light);
 }
 
+.button__decrypt{
+    background-color: var(--color-background-button2);
+    color: var(--color-text-1);
+    width: 267px;
+    height: 67px;
+    border: 1px solid var(--color-background-button1) ;
+    border-radius: 24px;
+    box-shadow: 5px 5px 10px var(--color-box-shadow),
+                -5px -5px 10px var(--color-box-Light);
+}
 
+.main__decrypted{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0% 10% 2% 0%; /*top, right, bottom, left*/
+    width: 30%;
+    height: 80vh;
+    border-radius: 32px;
+    background-color: var(--color-box-background);
+    border-radius: 10px;
+    padding: 2%;
+    box-shadow: 5px 5px 10px var(--color-box-shadow),
+                -5px -5px 10px var(--color-box-Light);
+}
+
+.decrypted__text{
+    color: var(--color-text-1);
+    align-self: flex-start;
+}
+.button__copy{   
+    align-self: center;
+    background-color: var(--color-box);
+    width: 267px;
+    height: 67px;
+    border: 1px solid;
+    border-radius: 24px;
+    color: var(--color-background-button1);
+}
+
+.button__copy:hover{
+    box-shadow: inset 5px 5px 10px var(--color-box-shadow),
+                inset -5px -5px 10px var(--color-box-Light);
+}
 .footer{
     display: flex;
     justify-content: center;
+    text-align: center;
     padding: 2%;
     margin-top: auto;
+    width: 100%;
 }
 
-@media (max-width: 1023px){
+@media (max-width: 769px){
+
     .header{
-        padding: 6% 0% 0% 2%;
+        padding: 6% 0% 0% 2%; /*top, right, bottom, left*/
+    }
+    .main{
+        flex-direction: column;
+        margin: 6% 6% 0% 6%; /*top, right, bottom, left*/
+    }
+
+    .main__encrypted{
+        margin: 0% 0% 0% 0%;
+    }
+    .main__decrypted{
+        margin: 6% 20% 0% 20%;
+        align-self: center;
+        height: auto;
+        width: auto;
     }
 }
