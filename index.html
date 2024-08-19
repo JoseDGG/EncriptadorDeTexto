@@ -5,34 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <title>Encriptador de texto</title>
 </head>
 <body>
     <header class="header">
         <img class="logo__alura" src="assets/Logo.png" alt="logo Alura">
+        <p class="head">Encriptador de texto</p>
     </header>
     <main class="main">
         <!-- Sección donde va el texto a encriptar -->
         <section class="main__encrypted">
-            <input class="input" type="text" placeholder="Ingrese el texto aquí">
+            <textarea id="input" class="input" id="input" placeholder="Ingrese el texto aquí"></textarea>
             <div class="main__encrypted__leftBottom">
                 <div class="main__encrypted__warning">
                     <img class="exclamation__circle" src="assets/bi--exclamation-circle-fill.png" alt="logo__warning">
                     <p class="warning__text">solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="main__encrypted__buttons">
-                    <button class="button__encrypt">Encriptar</button>
-                    <button class="button__decrypt">Desencriptar</button>
+                    <button onclick="encrypt()" class="button__encrypt">Encriptar</button>
+                    <button onclick="decrypt()" class="button__decrypt">Desencriptar</button>
                 </div>
             </div>
         </section>
         <!-- Sección donde va el texto decrypted -->
             <div class="main__decrypted">
-                <p class="decrypted__text">El texto va aquí</p>
-                <button class="button__copy">Copiar</button>
+                <div id="decrypted__false" class="decrypted__false">
+                    <img class="decrypted__image" src="assets/Muñeco.png" alt="A person looking for something">
+                    <div class="decrypted__false__container-inf">
+                        <p class="decrypted__text1">Ningún mensaje fue encontrado</p>
+                        <p class="decripted__text2"> Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                </div>
+                <div id="decrypted__true" class="decrypted__true">                    
+                    <p id="decrypted__text3" class="decrypted__text3"></p>
+                    <button onclick="copy()" class="button__copy">Copiar</button>
+                </div>
             </div>
     </main>
     <footer class="footer">
-        Elaborado por Jose David Garcia para el challenge de Alura Latam x Oracle 2024
+        Elaborado por Jose David Garcia
     </footer>
+    <script src="script.js" ></script>
 </body>
 </html>
