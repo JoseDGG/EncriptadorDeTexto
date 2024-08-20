@@ -1,5 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+#custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out, top 0.5s ease-out;
+}
+
+#custom-alert.hidden {
+    opacity: 0;
+    top: 0px;
+}
+
 :root{
     --color-background: #e6e6e6;
     --color-background-button1: #0A3871;
@@ -42,10 +63,11 @@ body{
 }
 
 .head{
+    position: fixed;
+    left: 42vw;
     font-family: var(--font-inter);
     font-size: 1.5rem;
     font-weight: 600;
-    align-self: center;
 }
 
 .main{
@@ -268,6 +290,9 @@ textarea::-webkit-scrollbar-track {
         
     }
 
+    .decrypted__image{
+        width: 100%;
+    }
 }
 
 @media (max-width: 912px){
@@ -283,5 +308,9 @@ textarea::-webkit-scrollbar-track {
 
     .logo__alura{
         width: 10%;
+    }
+
+    .decrypted__image{
+        width: 100%;
     }
 }

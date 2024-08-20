@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/styles.css">
     <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <div id="custom-alert" class="hidden"></div>
     <header class="header">
         <img class="logo__alura" src="assets/Logo.png" alt="logo Alura">
         <p class="head">Encriptador de texto</p>
@@ -22,7 +22,7 @@
                     <p class="warning__text">solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="main__encrypted__buttons">
-                    <button onclick="encrypt()" class="button__encrypt">Encriptar</button>
+                    <button onclick="encryptProcess.encrypt()" class="button__encrypt">Encriptar</button>
                     <button onclick="decrypt()" class="button__decrypt">Desencriptar</button>
                 </div>
             </div>
