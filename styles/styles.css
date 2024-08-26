@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
-#custom-alert {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f44336; /* Red background */
-    color: white;
-    padding: 15px;
-    border-radius: 5px;
-    opacity: 1;
-    z-index: 1000;
-    transition: opacity 0.5s ease-out, top 0.5s ease-out;
-}
-
-#custom-alert.hidden {
-    opacity: 0;
-    top: 0px;
-}
-
 :root{
     --color-background: #e6e6e6;
     --color-background-button1: #0A3871;
@@ -55,16 +34,67 @@ body{
     height: 100%;
 }
 
+#red-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out, top 0.5s ease-out;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+}
+
+#red-alert.hidden {
+    opacity: 0;
+    top: 0px;
+}
+
+#copy-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #36f456; /* Red background */
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out, top 0.5s ease-out;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+}
+
+#copy-alert.hidden {
+    opacity: 0;
+    top: 0px;
+}
+
 .header{
     width: 100%;
     height: auto;
-    padding: 40px 0% 0% 0%; /*top, right, bottom, left*/
+    padding: 40px 0% 1% 0%; /*top, right, bottom, left*/
     display: flex;
+    justify-content: center;
 }
 
-.head{
+.logo__alura{
     position: fixed;
-    left: 42vw;
+    left: 40px;
+    top: 40px;
+    width: 6%;
+    height: auto;
+
+}
+.head{   
     font-family: var(--font-inter);
     font-size: 1.5rem;
     font-weight: 600;
@@ -92,6 +122,32 @@ body{
                 inset -5px -5px 10px var(--color-box-Light);
 }
 
+.reset__1{
+    align-self: flex-end;
+    width: 10%;
+    border: none;
+    border-radius: 10%;
+    background-color: var(--color-background-button2);
+    border: 1px solid var(--color-background-button1);
+
+}
+
+.reset__image{
+    width: 30%;
+    height: auto;
+}
+
+
+.reset__2{
+    align-self: flex-end;
+    width: 10%;
+    border: none;
+    border-radius: 10%;
+    background-color: var(--color-background-button2);
+    border: 1px solid var(--color-background-button1);
+
+}
+
 .input{
     box-sizing: border-box;
     border: none;
@@ -100,7 +156,6 @@ body{
     resize: none;
     width: 100%;
     height: 100%;
-    padding-top: 10%;
     background-color: var(--color-background);
     font-family: var(--font-inter);
     color: var(--color-text-1);
@@ -175,6 +230,8 @@ textarea::-webkit-scrollbar-track {
 }
 
 .main__decrypted{
+    display: flex;
+    flex-direction: column;
     width: 40%;
     height: 90%;
     border-radius: 32px;
@@ -262,7 +319,7 @@ textarea::-webkit-scrollbar-track {
     color: var(--color-background-button1);
 }
     
-.button__copy:hover, .button__decrypt:hover, .button__encrypt:hover{
+.button__copy:hover, .button__decrypt:hover, .button__encrypt:hover, .reset__1:hover, .reset__2:hover{
     box-shadow: inset 5px 5px 10px var(--color-box-shadow),
     inset -5px -5px 10px var(--color-box-Light);
 }
@@ -270,7 +327,7 @@ textarea::-webkit-scrollbar-track {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 2%;
+    padding: 1%;
     margin-top: auto;
     width: 100%;
 }
@@ -297,13 +354,32 @@ textarea::-webkit-scrollbar-track {
 
 @media (max-width: 912px){
 
-    .main{
-        flex-direction: column;
-        width: 90%;
-        height: 90%;
-    }
     .header{
-        padding: 6% 0% 0% 2%; /*top, right, bottom, left*/
+        padding: 5% 0% 2% 2%; /*top, right, bottom, left*/
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main__encrypted{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        height: 45%;
+        padding: 2% 2% 1% 2%; /*top, right, bottom, left*/
+    }
+
+    .main__decrypted{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 45%;
+        padding: 2% 2% 3% 2%; /*top, right, bottom, left*/
     }
 
     .logo__alura{
@@ -311,6 +387,11 @@ textarea::-webkit-scrollbar-track {
     }
 
     .decrypted__image{
-        width: 100%;
+        width: 60%;
+        height: auto;
+    }
+
+    .footer{
+        padding-top: 3%;
     }
 }

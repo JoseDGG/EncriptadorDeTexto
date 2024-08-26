@@ -1,18 +1,18 @@
 
 let decryptedFalse = document.getElementById('decrypted__false');
 let decryptedTrue = document.getElementById('decrypted__true');
-/*  1. Create a variable that can contain the encrypted text so it can be pass to other functions -
-without executing the encryptProcess.method
-    2. Change the name of encryptProcess to something more suitable since I will append the decrypt function
-*/
+let coppyButton = document.getElementById('button-copy');
+let alertMessageRed = document.getElementById('red-alert');
+let alertMessageCopy = document.getElementById('copy-alert');
+let invalidPattern = /[A-ZÁÉÍÓÚÑáéíóúñ]/;
 
 let encryptProcess = {
     
-    encrypt : function encrypt(){
+    encrypt : function () {
         const textarea = document.getElementById('input').value;
         decryptedFalse.style.display = "none"; 
         decryptedTrue.style.display = "flex";
-        let invalidPattern = /A-ZÁÉÍÓÚÑ/;
+        coppyButton.style.display = "block"
         if (!invalidPattern.test(textarea)){
             const encryptedText = textarea
                 .replace(/e/g, "enter")
@@ -20,61 +20,69 @@ let encryptProcess = {
                 .replace(/a/g, "ai")
                 .replace(/o/g,"ober")
                 .replace(/u/g, "ufat");
-            document.getElementById('decrypted__text3').textContent = encryptedText;
-            console.log(encryptedText + " = encrypt method");
-            return encryptedText;
+                document.getElementById('decrypted__text3').textContent = encryptedText;
+                console.log(encryptedText + " = encrypt method");    
+            }
+            else{
+                coppyButton.style.display = "none"
+                alertMessageRed.style.display = "flex";
+                document.getElementById('decrypted__text3').textContent = "¡Error! Solo se aceptan letras en minúscula y sin acento.";
+                showAlert("¡Error! Solo se aceptan letras en minúscula y sin acento.", 'red-alert', 4000);
         }
-        else{
-            document.getElementById('decrypted__text3').textContent = "Error! You must not include uppercase letters or accents.";
-            console.log("Error! You must not include uppercase letters or accents.");
-        }
-    }
+    },
+
+    decrypt : function () {
+        const textarea = document.getElementById('input').value;
+        decryptedFalse.style.display = "none"; 
+        decryptedTrue.style.display = "flex";
+        coppyButton.style.display = "block"
+        
+        const decryptedText = textarea
+        .replace(/enter/g, "e")
+        .replace(/imes/g, "i")
+        .replace(/ai/g, "a")
+        .replace(/ober/g, "o")
+        .replace(/ufat/g, "u");
+        
     
-}
-
-function decrypt(){
-    decryptedFalse.style.display = "none"; 
-    decryptedTrue.style.display = "flex";
-
-    const textarea = document.getElementById('input').value; 
-    const decryptedText = textarea
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ober/g, "o")
-    .replace(/ufat/g, "u");
-    console.log(decryptedText);
-    document.getElementById('decrypted__text3').textContent = decryptedText;
+        console.log(decryptedText + " = dencrypt method");  
+        document.getElementById('decrypted__text3').textContent = decryptedText;
+    }
 }
 
 function copy(){
-    const textarea = encryptProcess.encrypt(); /*withouth value to be able to use the select() method. we need to get the actual element.*/
-    const tempTextarea = document.createElement("textarea");
-    tempTextarea.value = textarea;
-    document.body.appendChild(tempTextarea)
-    tempTextarea.select();
+    textToCopy = document.getElementById("decrypted__text3").textContent;
+    
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = textToCopy
+    document.body.appendChild(tempTextArea) //Adds the tag in the HTML//
+    
+    tempTextArea.select();
     document.execCommand("copy");
-    document.body.removeChild(tempTextarea);
-    console.log(textarea + "worked");
+    document.body.removeChild(tempTextArea);
+    console.log(textToCopy +' = copy function');
+
+    alertMessageCopy.style.display = "flex";
+
+    showAlert("Texto copiado al portapapeles", 'copy-alert', 3000);
 }
 
 function resetTextArea (){
-
+    document.getElementById("input").value = '';
 }
 
 function resetDecryptedArea(){
-
+    decryptedFalse.style.display = "flex"; 
+    decryptedTrue.style.display = "none";
+    coppyButton.style.display = "block"
 }
 
-function showAlert(message, duration = 3000) {
-    const alertBox = document.getElementById('custom-alert');
-    alertBox.textContent = message;
-    alertBox.classList.remove('hidden');
-
+function showAlert(message, alertType, duration = 3000) {
+const alertBox = document.getElementById(alertType);
+alertBox.textContent = message;
+alertBox.classList.remove('hidden');
+    
     setTimeout(() => {
         alertBox.classList.add('hidden');
     }, duration);
 }
-
-// Example usage:
-showAlert("This is a non-blocking alert message!", 3000);
