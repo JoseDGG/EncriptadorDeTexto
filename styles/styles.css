@@ -51,7 +51,7 @@ body{
     font-size: 1rem;
 }
 
-#red-alert.hidden {
+#red-alert.hidden, #copy-alert.hidden {
     opacity: 0;
     top: 0px;
 }
@@ -73,11 +73,6 @@ body{
     font-size: 1rem;
 }
 
-#copy-alert.hidden {
-    opacity: 0;
-    top: 0px;
-}
-
 .header{
     width: 100%;
     height: auto;
@@ -94,6 +89,7 @@ body{
     height: auto;
 
 }
+
 .head{   
     font-family: var(--font-inter);
     font-size: 1.5rem;
@@ -208,9 +204,9 @@ textarea::-webkit-scrollbar-track {
 }
 
 .button__encrypt{
+    width: 50%;
+    height: 3.5vw;
     color: var(--color-text-1);
-    width: 267px;
-    height: 67px;
     background-color: var(--color-background-button2);
     border: 1px solid var(--color-background-button1) ;
     border-radius: 24px;
@@ -219,9 +215,9 @@ textarea::-webkit-scrollbar-track {
 }
 
 .button__decrypt{
+    width: 50%;
+    height: 3.5vw;
     color: var(--color-text-1);
-    width: 267px;
-    height: 67px;
     background-color: var(--color-background-button2);
     border: 1px solid var(--color-background-button1) ;
     border-radius: 24px;
@@ -266,7 +262,6 @@ textarea::-webkit-scrollbar-track {
     font-family: var(--font-inter);
     font-size: 1rem;
     font-weight: 400;
-    text-align: right;
 }
 
 
@@ -285,7 +280,7 @@ textarea::-webkit-scrollbar-track {
     font-size: 1rem;
     font-weight: 400;
     width: 100%;
-    height: 540px;
+    height: auto;
     word-wrap: break-word;
     white-space: pre-wrap;
     overflow-y: auto;
@@ -310,10 +305,10 @@ textarea::-webkit-scrollbar-track {
 }
     
 .button__copy{  
+    width: 50%;
+    height: 3.5vw;
     align-self: center;
     background-color: var(--color-box);
-    width: 267px;
-    height: 67px;
     border: 1px solid;
     border-radius: 24px;
     color: var(--color-background-button1);
@@ -332,35 +327,121 @@ textarea::-webkit-scrollbar-track {
     width: 100%;
 }
 
-@media (max-width: 1024px){
-
+@media (max-width: 768px){
+    
     .header{
-        padding: 6% 0% 0% 2%; /*top, right, bottom, left*/
+        padding: 4% 0% 2% 2%; /*top, right, bottom, left*/
     }
-
+    
     .logo__alura{
         width: 10%;
     }
-
+    
     .main{
-        width: 90%;
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 90%;
+    }
+    
+    .main__encrypted{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 80%;
+        height: 40%;
+        padding: 2% 5% 3% 5%; /*top, right, bottom, left*/
     }
 
+    .main__encrypted__buttons{
+        gap: 3vw;
+        padding-bottom: 0%;
+    }
+    
+    .button__encrypt{
+        align-self: center;
+        width: 90%;
+        height: 8vw;
+    }
+    
+    .button__decrypt{
+        align-self: center;
+        width: 90%;
+        height: 8vw;
+    }
+    
+    .main__decrypted{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 40%;
+        padding: 2% 5% 3% 5%; /*top, right, bottom, left*/
+    }
+    
+    .decrypted__true{
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0%;
+        height: 100%;
+        display: none;
+        gap: none;
+    }
+    
+    .decrypted__text1{
+        font-size: 2.5vw;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .decrypted__text2{
+        font-size: 2vw;
+        font-weight: 400;
+    }
+    
+    .decrypted__text3{
+        font-size: 3vw;
+        width: 100%;
+        height: auto;
+    }
+    
     .decrypted__image{
+        width: 35%;
+        height: auto;
+    }
+    
+    .button__copy{  
+        align-self: center;
+        width: 90%;
+        height: 8vw;
+    }
+    
+    .footer{
+        padding-top: 0%;
+        padding-bottom: 1%;
+        padding: 0%;
         width: 100%;
     }
+    
 }
 
-@media (max-width: 912px){
+@media (max-width: 425px){
 
     .header{
         padding: 5% 0% 2% 2%; /*top, right, bottom, left*/
     }
 
+    .head{   
+        font-family: var(--font-inter);
+        font-size: 5vw;
+        font-weight: 600;
+    }
+
     .main{
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
         width: 100%;
         height: 100%;
     }
@@ -369,21 +450,100 @@ textarea::-webkit-scrollbar-track {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 50%;
+        width: 80%;
         height: 45%;
-        padding: 2% 2% 1% 2%; /*top, right, bottom, left*/
+        padding: 2% 5% 1% 5%; /*top, right, bottom, left*/
+    }
+
+    .reset__1{
+        align-self: flex-end;
+        width: 15%;
+        border: none;
+        border-radius: 30%;
+        background-color: var(--color-background-button2);
+        border: 0.5px solid var(--color-background-button1);
+    
+    }
+    
+    .reset__image{
+        width: 40%;
+        height: auto;
+    }
+    
+    
+    .reset__2{
+        align-self: flex-end;
+        width: 15%;
+        border: none;
+        border-radius: 30%;
+        background-color: var(--color-background-button2);
+        border: 0.5px solid var(--color-background-button1);
+    
+    }
+
+    .input{
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        overflow-y: auto;
+        resize: none;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-background);
+        font-family: var(--font-inter);
+        color: var(--color-text-1);
+        font-size: 1rem;
+    }
+
+    .main__encrypted__buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 2%;
+    }
+
+    .button__encrypt{
+        align-self: center;
+        width: 90%;
+        height: 15vw;
+    }
+    
+    .button__decrypt{
+        align-self: center;
+        color: var(--color-text-1);
+        width: 90%;
+        height: 15vw;
     }
 
     .main__decrypted{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 80%;
         height: 45%;
-        padding: 2% 2% 3% 2%; /*top, right, bottom, left*/
+        padding: 2% 5% 3% 5%; /*top, right, bottom, left*/
+    }
+
+    .decrypted__text1{
+        font-size: 4vw;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .decrypted__text2{
+        font-size: 3vw;
+        font-weight: 400;
+    }
+        
+    .decrypted__text3{
+        font-size: 4vw;
+        width: 100%;
+        height: auto;
     }
 
     .logo__alura{
         width: 10%;
+        left: 4px;
+        top: 15px;
     }
 
     .decrypted__image{
@@ -391,7 +551,14 @@ textarea::-webkit-scrollbar-track {
         height: auto;
     }
 
+    .button__copy{  
+        align-self: center;
+        width: 90%;
+        height: 15vw;
+    }
+
     .footer{
-        padding-top: 3%;
+        padding-top: 0%;
+        padding-bottom: 1%;
     }
 }
