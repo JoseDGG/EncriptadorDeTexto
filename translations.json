@@ -1,0 +1,23 @@
+{
+    "en": {
+      "title": "Text Encryptor",
+      "placeholder": "Enter text here",
+      "warning": "Only lowercase letters and no accents",
+      "encrypt": "Encrypt",
+      "decrypt": "Decrypt",
+      "copy": "Copy",
+      "noMessage": "No message found",
+      "inputText": "Enter the text you want to encrypt or decrypt."
+    },
+    "es": {
+      "title": "Encriptador de texto",
+      "placeholder": "Ingrese el texto aquí",
+      "warning": "Solo letras minúsculas y sin acentos",
+      "encrypt": "Encriptar",
+      "decrypt": "Desencriptar",
+      "copy": "Copiar",
+      "noMessage": "Ningún mensaje fue encontrado",
+      "inputText": "Ingresa el texto que desees encriptar o desencriptar."
+    }
+  }
+  

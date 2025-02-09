@@ -86,3 +86,32 @@ alertBox.classList.remove('hidden');
         alertBox.classList.add('hidden');
     }, duration);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const langSelector = document.getElementById("language__selector");
+
+    // Load saved language from localStorage
+    const savedLang = localStorage.getItem("language") || "en";
+    langSelector.value = savedLang;
+    loadLanguage(savedLang);
+    langSelector.addEventListener("change", (event) => {
+        const selectedLang = event.target.value;
+        localStorage.setItem("language", selectedLang); // Save preference
+        loadLanguage(selectedLang);
+    });
+});
+
+function loadLanguage(lang) {
+    fetch("translations.json")
+        .then((response) => response.json()) //converts content to a javascript file
+        .then((translations) => {
+            document.querySelector(".head").textContent = translations[lang].title;
+            document.getElementById("input").setAttribute("placeholder", translations[lang].placeholder);
+            document.querySelector(".warning__text").textContent = translations[lang].warning;
+            document.querySelector(".button__encrypt").textContent = translations[lang].encrypt;
+            document.querySelector(".button__decrypt").textContent = translations[lang].decrypt;
+            document.querySelector(".button__copy").textContent = translations[lang].copy;
+            document.querySelector(".decrypted__text1").textContent = translations[lang].noMessage;
+            document.querySelector(".decrypted__text2").textContent = translations[lang].inputText;
+        });
+}

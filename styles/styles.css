@@ -73,12 +73,38 @@ body{
     font-size: 1rem;
 }
 
+
+#language__selector {
+    position: fixed;
+    height: auto;
+    right: 40px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 2px var(--color-background);
+    border-radius: 5%;
+    background-color: var(--color-box-background);
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-weight: 400;
+}
+
+/* Add hover effect */
+#language__selector:hover {
+    background-color: var(--color-background-button1);
+    color: var(--color-background) ;
+}
+
 .header{
     width: 100%;
     height: auto;
     padding: 40px 0% 1% 0%; /*top, right, bottom, left*/
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .logo__alura{
@@ -94,6 +120,7 @@ body{
     font-family: var(--font-inter);
     font-size: 1.5rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .main{
@@ -426,7 +453,7 @@ textarea::-webkit-scrollbar-track {
     
 }
 
-@media (max-width: 425px){
+@media (max-width: 500px){
 
     .header{
         padding: 5% 0% 2% 2%; /*top, right, bottom, left*/
