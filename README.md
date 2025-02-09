@@ -43,15 +43,15 @@ The reverse process is applied to decrypt the text.
 
 General view
 
-![General view of the program](assets\general_view.jpg)
+![General view of the program](assets/general_view.jpg)
 
 For Tablets
 
-![General view of the program](assets\general_tablet_view.jpg)
+![General view of the program](assets/general_tablet_view.jpg)
 
 For Mobiles
 
-![General view of the program](assets\general_mobile_view.jpg)
+![General view of the program](assets/general_mobile_view.jpg)
 
 You can run the program by opening `index.html` file in your browser.
 
