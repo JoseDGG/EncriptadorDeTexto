@@ -1,21 +1,25 @@
-# Text Encryptor
+# 🔐 Text Encryptor
 
-This is a responsive text encryptor developed in HTML, CSS, and JavaScript. It allows encrypting and decrypting text based on a character substitution pattern.
+This is a text encryptor developed in HTML, CSS, and JavaScript. It allows encrypting and decrypting text based on a character substitution pattern.
 
-## Features
-- **Encrypt text:** Converts vowels into specific letter combinations.
-- **Decrypt text:** Restores the original text from the encrypted version.
-- **Copy text:** Allows copying the encrypted or decrypted text to the clipboard.
+## ✨ Features
+- 🔏 **Encrypt text:** Converts vowels into specific letter combinations.
+- 🔓 **Decrypt text:** Restores the original text from the encrypted version.
+- 📋 **Copy text:** Allows copying the encrypted or decrypted text to the clipboard.
 - **Language selector:** Interface available in English and Spanish.
 - **Input validation:** Only allows lowercase letters without accents.
 
-## Usage
+## 🛠 Requirements
+- 🖥 A modern web browser (Google Chrome, Firefox, Edge, etc.)
+- 📦 No additional dependencies required.
+
+## 🚀 Usage
 1. Enter text in the input area.
 2. Click "Encrypt" to encrypt the text or "Decrypt" to restore it.
 3. Copy the result using the "Copy" button.
 4. You can change the language from the selector at the top.
 
-## Project Structure
+## 📂 Project Structure
 ```
 📂 Text-Encryptor
 │── 📂 assets               # Images and resources
@@ -25,7 +29,7 @@ This is a responsive text encryptor developed in HTML, CSS, and JavaScript. It a
 │── 📄 translations.json    # Translations for multiple languages
 ```
 
-## Encryption Algorithm
+## 🔑 Encryption Algorithm
 The entered text is encrypted according to the following rules:
 - `e` → `enter`
 - `i` → `imes`
@@ -35,7 +39,7 @@ The entered text is encrypted according to the following rules:
 
 The reverse process is applied to decrypt the text.
 
-## View of the program
+## 🪟 View of the program
 
 General view
 
@@ -51,6 +55,6 @@ For Mobiles
 
 You can run the program by opening `index.html` file in your browser.
 
-## License
-This project is distributed under the MIT license. You are free to modify and share it.
 
+## 📜 License
+This project is distributed under the MIT license. You are free to modify and share it.
